@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cathy Fantaisies — Créations personnalisées uniques</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">A Sac'Un <span>Son Sac</span></a>
+  <ul class="nav-links">
+    <li><a href="#categories">Collections</a></li>
+    <li><a href="#configurator">Personnaliser</a></li>
+    <li><a href="#reviews">Avis</a></li>
+    <li><a href="#configurator" class="nav-cta">Créer mon badge</a></li>
+  </ul>
+  <div class="nav-cart">
+    <div class="cart-icon" onclick="openCart()">
+      🛍️
+      <div class="cart-badge" id="cart-count">0</div>
+    </div>
+  </div>
+  <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left animate-in">
+    <div class="hero-tag">✦ Créations artisanales françaises</div>
+    <h1>Créez un cadeau <em>unique,</em><br>à votre image</h1>
+    <p class="hero-sub">Badges personnalisés, mugs, sacs et accessoires faits main avec amour. Chaque création est unique, conçue spécialement pour vous ou pour offrir.</p>
+    <div class="hero-actions">
+      <a href="#configurator" class="btn-primary">✦ Personnaliser mon produit</a>
+      <a href="#categories" class="btn-secondary">Voir les collections →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Créations livrées</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Fait main</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5★</div>
+        <div class="stat-label">Satisfaction client</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-mosaic">
+      <div class="mosaic-cell" style="background: #E8EDF5;">
+        <img src="images/badge/badge_clea.PNG" alt="Badge personnalisé">
+        <div class="mosaic-overlay"></div>
+      </div>
+      <div class="mosaic-cell" style="background: #F5E8E0;">
+        <img src="images/mug/mug_cafe.PNG" alt="Mug personnalisé">
+        <div class="mosaic-overlay"></div>
+      </div>
+      <div class="mosaic-cell" style="background: #EDF5E8;">
+        <img src="images/sac_pochette/sac_pure.PNG" alt="Sac personnalisé">
+        <div class="mosaic-overlay"></div>
+      </div>
+      <div class="mosaic-cell" style="background: #F5F0E0;">
+        <img src="images/decorations/bougie_home.PNG"Bougie personnalisée">
+        <div class="mosaic-overlay"></div>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-icon">🎁</div>
+      <div class="hero-badge-text">
+        <strong>Idée cadeau parfaite</strong>
+        <span>Personnalisé & livré en 5-7 jours</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK CONFIG CTA -->
+<div class="quick-config">
+  <div class="qc-text">
+    <h2>Votre badge personnalisé<br>en 30 secondes chrono ⏱</h2>
+    <p>Choisissez votre couleur, tapez votre prénom et votre profession, ajoutez vos décorations préférées. C'est aussi simple que ça !</p>
+  </div>
+  <div class="qc-timer">
+    <div class="qc-badge-30">
+      <strong>30</strong>
+      <span>sec</span>
+    </div>
+    <a href="#configurator" class="qc-btn">Créer mon badge en 30 secondes ✦</a>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+  <div class="cat-header">
+    <div class="section-label">Nos collections</div>
+    <h2 class="section-title">Trouvez votre <em>création</em> idéale</h2>
+  </div>
+  <div class="cat-grid">
+    <!-- Badges & Porte-noms -->
+    <div class="cat-card cat-card-collection">
+      <div class="collection-closed" id="badges-closed">
+        <div class="collection-preview-row">
+          <img src="images/badge/badge_alicia5.PNG" alt="Badge Alicia 5" onclick="openLightbox(this)">
+          <img src="images/badge/badge_laetitia.PNG" alt="Badge Laëtitia" onclick="openLightbox(this)">
+          <img src="images/badge/badge_josea.PNG" alt="Badge Josea" onclick="openLightbox(this)">
+        </div>
+        <div class="collection-footer">
+          <div class="collection-footer-grad"></div>
+          <div class="collection-footer-info">
+            <div class="collection-footer-text">
+              <h3>Badges & Porte-noms</h3>
+              <span>13 créations disponibles</span>
+            </div>
+            <button class="cat-voir-plus-btn" onclick="openCollection('badges')">Voir les 13 créations →</button>
+          </div>
+        </div>
+      </div>
+      <div class="collection-open" id="badges-open" style="display:none;">
+        <div class="cat-open-grid">
+          <img src="images/badge/badge_alicia.PNG" alt="Badge Alicia" onclick="openLightbox(this)">
+          <img src="images/badge/badge_alicia2.PNG" alt="Badge Alicia 2" onclick="openLightbox(this)">
+          <img src="images/badge/badge_alicia3.PNG" alt="Badge Alicia 3" onclick="openLightbox(this)">
+          <img src="images/badge/badge_alicia4.PNG" alt="Badge Alicia 4" onclick="openLightbox(this)">
+          <img src="images/badge/badge_alicia5.PNG" alt="Badge Alicia 5" onclick="openLightbox(this)">
+          <img src="images/badge/badge_chahra.PNG" alt="Badge Chahra" onclick="openLightbox(this)">
+          <img src="images/badge/badge_chahra2.PNG" alt="Badge Chahra 2" onclick="openLightbox(this)">
+          <img src="images/badge/badge_clea.PNG" alt="Badge Cléa" onclick="openLightbox(this)">
+          <img src="images/badge/badge_elsa.PNG" alt="Badge Elsa" onclick="openLightbox(this)">
+          <img src="images/badge/badge_josea.PNG" alt="Badge Josea" onclick="openLightbox(this)">
+          <img src="images/badge/badge_laetitia.PNG" alt="Badge Laëtitia" onclick="openLightbox(this)">
+          <img src="images/badge/badge_sandrine.PNG" alt="Badge Sandrine" onclick="openLightbox(this)">
+          <img src="images/badge/badge_sophie.PNG" alt="Badge Sophie" onclick="openLightbox(this)">
+        </div>
+        <div class="collection-footer-open">
+          <div class="collection-footer-text">
+            <h3>Badges & Porte-noms</h3>
+            <span>13 créations disponibles</span>
+          </div>
+          <button class="cat-voir-plus-btn" onclick="closeCollection('badges')">Voir moins ↑</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Décoration -->
+    <div class="cat-card cat-card-collection">
+      <div class="collection-closed" id="deco-closed">
+        <div class="collection-preview-row">
+          <img src="images/decorations/bougie_cube.PNG" alt="Bougie cube" onclick="openLightbox(this)">
+          <img src="images/decorations/vase1.PNG" alt="Vase" onclick="openLightbox(this)">
+          <img src="images/decorations/planche.PNG" alt="Planche" onclick="openLightbox(this)">
+        </div>
+        <div class="collection-footer">
+          <div class="collection-footer-grad"></div>
+          <div class="collection-footer-info">
+            <div class="collection-footer-text">
+              <h3>Décoration</h3>
+              <span>14 créations disponibles</span>
+            </div>
+            <button class="cat-voir-plus-btn" onclick="openCollection('deco')">Voir les 14 créations →</button>
+          </div>
+        </div>
+      </div>
+      <div class="collection-open" id="deco-open" style="display:none;">
+        <div class="cat-open-grid">
+          <img src="images/decorations/bougie.PNG" alt="Bougie" onclick="openLightbox(this)">
+          <img src="images/decorations/bougie_cube.PNG" alt="Bougie cube" onclick="openLightbox(this)">
+          <img src="images/decorations/bougie_home.PNG" alt="Bougie home" onclick="openLightbox(this)">
+          <img src="images/decorations/bougie_noel.PNG" alt="Bougie Noël" onclick="openLightbox(this)">
+          <img src="images/decorations/boule_noel.PNG" alt="Boule Noël" onclick="openLightbox(this)">
+          <img src="images/decorations/deco_ski.PNG" alt="Déco ski" onclick="openLightbox(this)">
+          <img src="images/decorations/deco_table.PNG" alt="Déco table" onclick="openLightbox(this)">
+          <img src="images/decorations/deco_table2.PNG" alt="Déco table 2" onclick="openLightbox(this)">
+          <img src="images/decorations/deconoel.PNG" alt="Déco Noël" onclick="openLightbox(this)">
+          <img src="images/decorations/marque_page.PNG" alt="Marque-page" onclick="openLightbox(this)">
+          <img src="images/decorations/noel.PNG" alt="Noël" onclick="openLightbox(this)">
+          <img src="images/decorations/planche.PNG" alt="Planche" onclick="openLightbox(this)">
+          <img src="images/decorations/vase.PNG" alt="Vase" onclick="openLightbox(this)">
+          <img src="images/decorations/vase1.PNG" alt="Vase 1" onclick="openLightbox(this)">
+        </div>
+        <div class="collection-footer-open">
+          <div class="collection-footer-text">
+            <h3>Décoration</h3>
+            <span>14 créations disponibles</span>
+          </div>
+          <button class="cat-voir-plus-btn" onclick="closeCollection('deco')">Voir moins ↑</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tote bags & Pochettes -->
+    <div class="cat-card cat-card-collection">
+      <div class="collection-closed" id="sacs-closed">
+        <div class="collection-preview-row">
+          <img src="images/sac_pochette/sac_pure.PNG" alt="Sac pure" onclick="openLightbox(this)">
+          <img src="images/sac_pochette/sac_tournesol.PNG" alt="Sac tournesol" onclick="openLightbox(this)">
+          <img src="images/sac_pochette/pochette_piscine.PNG" alt="Pochette piscine" onclick="openLightbox(this)">
+        </div>
+        <div class="collection-footer">
+          <div class="collection-footer-grad"></div>
+          <div class="collection-footer-info">
+            <div class="collection-footer-text">
+              <h3>Tote bags & Pochettes</h3>
+              <span>6 créations disponibles</span>
+            </div>
+            <button class="cat-voir-plus-btn" onclick="openCollection('sacs')">Voir les 6 créations →</button>
+          </div>
+        </div>
+      </div>
+      <div class="collection-open" id="sacs-open" style="display:none;">
+        <div class="cat-open-grid cat-open-grid-3">
+          <img src="images/sac_pochette/pochette_piscine.PNG" alt="Pochette piscine" onclick="openLightbox(this)">
+          <img src="images/sac_pochette/pochette_sophie.PNG" alt="Pochette Sophie" onclick="openLightbox(this)">
+          <img src="images/sac_pochette/sac_cr.PNG" alt="Sac CR" onclick="openLightbox(this)">
+          <img src="images/sac_pochette/sac_plage.PNG" alt="Sac plage" onclick="openLightbox(this)">
+          <img src="images/sac_pochette/sac_pure.PNG" alt="Sac pure" onclick="openLightbox(this)">
+          <img src="images/sac_pochette/sac_tournesol.PNG" alt="Sac tournesol" onclick="openLightbox(this)">
+          <img src="images/sac_pochette/pochette_laeticia.png" alt="Pochette Laeticia" onclick="openLightbox(this)">
+        </div>
+        <div class="collection-footer-open">
+          <div class="collection-footer-text">
+            <h3>Tote bags & Pochettes</h3>
+            <span>6 créations disponibles</span>
+          </div>
+          <button class="cat-voir-plus-btn" onclick="closeCollection('sacs')">Voir moins ↑</button>
+        </div>
+      </div>
+    </div>
+    <!-- Mugs personnalisés -->
+    <div class="cat-card cat-card-collection">
+      <div class="collection-closed" id="mugs-closed">
+        <div class="collection-preview-row">
+          <img src="images/mug/mug_new_york.PNG" alt="Mug New York" onclick="openLightbox(this)">
+          <img src="images/mug/mug_lion.PNG" alt="Mug lion" onclick="openLightbox(this)">
+          <img src="images/mug/mug_noel.PNG" alt="Mug Noël" onclick="openLightbox(this)">
+        </div>
+        <div class="collection-footer">
+          <div class="collection-footer-grad"></div>
+          <div class="collection-footer-info">
+            <div class="collection-footer-text">
+              <h3>Mugs personnalisés</h3>
+              <span>13 créations disponibles</span>
+            </div>
+            <button class="cat-voir-plus-btn" onclick="openCollection('mugs')">Voir les 13 créations →</button>
+          </div>
+        </div>
+      </div>
+      <div class="collection-open" id="mugs-open" style="display:none;">
+        <div class="cat-open-grid">
+          <img src="images/mug/mug_basket.PNG" alt="Mug basket" onclick="openLightbox(this)">
+          <img src="images/mug/mug_basket2.PNG" alt="Mug basket 2" onclick="openLightbox(this)">
+          <img src="images/mug/mug_cafe.PNG" alt="Mug café" onclick="openLightbox(this)">
+          <img src="images/mug/mug_cat_pat.PNG" alt="Mug cat pat" onclick="openLightbox(this)">
+          <img src="images/mug/mug_cat_pat2.PNG" alt="Mug cat pat 2" onclick="openLightbox(this)">
+          <img src="images/mug/mug_chat.PNG" alt="Mug chat" onclick="openLightbox(this)">
+          <img src="images/mug/mug_goldorak.PNG" alt="Mug Goldorak" onclick="openLightbox(this)">
+          <img src="images/mug/mug_lion.PNG" alt="Mug lion" onclick="openLightbox(this)">
+          <img src="images/mug/mug_lion2.PNG" alt="Mug lion 2" onclick="openLightbox(this)">
+          <img src="images/mug/mug_new_york.PNG" alt="Mug New York" onclick="openLightbox(this)">
+          <img src="images/mug/mug_noel.PNG" alt="Mug Noël" onclick="openLightbox(this)">
+          <img src="images/mug/mug_paris.PNG" alt="Mug Paris" onclick="openLightbox(this)">
+          <img src="images/mug/mug_soleil.PNG" alt="Mug soleil" onclick="openLightbox(this)">
+        </div>
+        <div class="collection-footer-open">
+          <div class="collection-footer-text">
+            <h3>Mugs personnalisés</h3>
+            <span>13 créations disponibles</span>
+          </div>
+          <button class="cat-voir-plus-btn" onclick="closeCollection('mugs')">Voir moins ↑</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT SECTION -->
+<section class="gift-section">
+  <div class="gift-text">
+    <h2>L'émotion d'un cadeau qui a du sens</h2>
+    <p>Offrir une création Cathy Fantaisies, c’est offrir bien plus qu’un objet : une attention pensée spécialement pour quelqu’un qui compte.</p>
+    <button class="gift-btn" onclick="location.href='#configurator'">✦ Créer un cadeau unique</button>
+  </div>
+  <div class="gift-cards">
+    <div class="gift-card">
+      <div class="gift-card-icon">👩‍⚕️</div>
+      <h4>Pour les soignants</h4>
+      <p>Des badges pensés pour celles et ceux qui prennent soin des autres, à leur image et avec attention.</p>
+    </div>
+    <div class="gift-card">
+      <div class="gift-card-icon">🎓</div>
+      <h4>Pour les diplômés</h4>
+      <p>Marques-pages, plaques souvenir pour célébrer chaque réussite avec style.</p>
+    </div>
+    <div class="gift-card">
+      <div class="gift-card-icon">👶</div>
+      <h4>Pour les naissances</h4>
+      <p>Cadeaux doux et personnalisés pour accueillir les bébés et leurs parents.</p>
+    </div>
+    <div class="gift-card">
+      <div class="gift-card-icon">💝</div>
+      <h4>Pour toutes occasions</h4>
+      <p>Noël, anniversaire, fête des mères… chaque moment mérite un cadeau unique.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BEST SELLERS -->
+<section class="bestsellers">
+  <div class="bs-header">
+    <div>
+      <div class="section-label">Inspirations</div>
+      <h2 class="section-title">Inspirations <em>personnalisées</em></h2>
+      <p class="bs-subtitle">Chaque création est unique. Inspirez-vous de ces modèles pour créer le vôtre.</p>
+    </div>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-img" style="background:#E8EDF5;">
+        <img src="images/badge/badge_elsa.PNG" alt="Badge Elsa" style="width:100%;height:100%;object-fit:cover;">
+        <div class="product-badge product-badge-inspi">Exemple personnalisé</div>
+        <div class="product-fav" onclick="toggleFav(this)">🤍</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Badge personnalisé – modèle soignant</div>
+        <div class="product-desc">Exemple de création personnalisée. Choisissez vos couleurs, prénom, profession et décorations.</div>
+        <div class="product-footer">
+          <a href="#configurator" class="product-inspi-btn">Créer le mien →</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img" style="background:#F5E8E0;">
+        <img src="images/mug/mug_basket.PNG" alt="Mug basket" style="width:100%;height:100%;object-fit:cover;">
+        <div class="product-badge product-badge-inspi">Exemple personnalisé</div>
+        <div class="product-fav" onclick="toggleFav(this)">🤍</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Mug personnalisé – pour les passionnés</div>
+        <div class="product-desc">Sport, musique, voyage… créez un mug à l'image de votre passion ou de celle d'un proche.</div>
+        <div class="product-footer">
+          <a href="#configurator" class="product-inspi-btn">Créer le mien →</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img" style="background:#EDF5E8;">
+        <img src="images/sac_pochette/sac_plage.PNG" alt="Sac plage" style="width:100%;height:100%;object-fit:cover;">
+        <div class="product-badge product-badge-inspi">Exemple personnalisé</div>
+        <div class="product-fav" onclick="toggleFav(this)">🤍</div>
+      </div>
+      <div class="product-info">
+        <div class="product-name">Sac personnalisé – ambiance plage & été</div>
+        <div class="product-desc">Un sac unique pour les journées ensoleillées. Personnalisez les couleurs, motifs et initiales selon vos envies.</div>
+        <div class="product-footer">
+          <a href="#configurator" class="product-inspi-btn">Créer le mien →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIGURATEUR -->
+<section class="configurator" id="configurator">
+  <div class="config-header">
+    <div class="section-label">Configurateur</div>
+    <h2 class="section-title">Personnalisez votre <em>création</em></h2>
+  </div>
+  <div class="config-steps">
+    <div class="step-dot active" onclick="setStep(1,this)">
+      <div class="step-num">1</div>
+      <div class="step-label">Produit</div>
+    </div>
+    <div class="step-dot" onclick="setStep(2,this)">
+      <div class="step-num">2</div>
+      <div class="step-label">Prénom</div>
+    </div>
+    <div class="step-dot" onclick="setStep(3,this)">
+      <div class="step-num">3</div>
+      <div class="step-label">Couleur</div>
+    </div>
+    <div class="step-dot" onclick="setStep(4,this)">
+      <div class="step-num">4</div>
+      <div class="step-label" id="step4-label">Décorations</div>
+    </div>
+    <div class="step-dot" onclick="setStep(5,this)">
+      <div class="step-num">5</div>
+      <div class="step-label">Aperçu</div>
+    </div>
+  </div>
+
+  <div class="config-body">
+    <!-- PREVIEW -->
+    <div class="config-preview">
+      <div class="preview-frame" id="preview-frame">
+        <!-- Badge Preview (default) -->
+        <div id="preview-badge" class="preview-badge-demo shape-cloud1" style="display:block;">
+          <div style="display:flex;gap:8px;justify-content:center;margin-bottom:8px;font-size:1rem;" id="preview-decos">🌈 ⭐</div>
+          <div class="preview-badge-name" id="preview-name">Sophie</div>
+          <div class="preview-badge-job" id="preview-job">Infirmière</div>
+        </div>
+        
+        <!-- Mug Preview -->
+        <div id="preview-mug" class="preview-product" style="display:none;">
+          <div class="mug-wrapper">
+            <img src="images/preview/mug_vierge.png" class="mug-photo" alt="Mug personnalisé">
+            <div class="mug-text-overlay mug-style-elegant" id="mug-text-overlay">
+              <div class="mug-name-display" id="mug-name-display">Sophie</div>
+              <div class="mug-job-display" id="mug-job-display">Infirmière</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tote Bag Preview -->
+        <div id="preview-tote" class="preview-product" style="display:none;">
+          <img src="images/preview/tot_bag_vierge.png" alt="Tote bag personnalisé">
+        </div>
+        
+        <!-- Décoration Preview -->
+        <div id="preview-deco" class="preview-product" style="display:none;">
+          <img src="images/preview/deco_cosy.png" alt="Décoration personnalisée" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+        </div>
+        
+        <div class="preview-deco" style="top:15%;left:10%;font-size:1.8rem;opacity:0.3">✦</div>
+        <div class="preview-deco" style="bottom:15%;right:8%;font-size:1.4rem;opacity:0.2">◌</div>
+      </div>
+      <div class="preview-info">
+        <div>
+          <div class="preview-info-label">Total estimé</div>
+          <div class="preview-info-price" id="preview-price">14,90 €</div>
+        </div>
+        <div style="font-size:0.75rem;color:var(--text-light);text-align:right;">
+          <div>✓ Fait main</div>
+          <div>✓ Livraison 5–7j</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="config-form">
+      <div class="form-group">
+        <label class="form-label">1. Choisissez votre produit</label>
+        <div class="product-selector">
+          <button class="product-opt selected" onclick="selectProduct(this, 'Badge', 14.90, '#1B3060')">
+            <span class="opt-icon">🏷️</span>
+            <span class="opt-name">Badge</span>
+          </button>
+          <button class="product-opt" onclick="selectProduct(this, 'Mug', 18.50, '#C8A882')">
+            <span class="opt-icon">☕</span>
+            <span class="opt-name">Mug</span>
+          </button>
+          <button class="product-opt" onclick="selectProduct(this, 'Tote bag', 22.00, '#A8C8A0')">
+            <span class="opt-icon">👜</span>
+            <span class="opt-name">Tote bag</span>
+          </button>
+          <button class="product-opt" onclick="selectProduct(this, 'Décoration', 12.00, '#C8A8C8')">
+            <span class="opt-icon">🕯️</span>
+            <span class="opt-name">Décoration</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Badge Shapes Selection -->
+      <div id="badge-shapes-section" class="form-group visible">
+        <label class="form-label">Forme du badge</label>
+        <div class="badge-shapes-grid">
+
+          <button class="badge-shape selected" onclick="selectBadgeShape(this, 'cloud1')" title="Nuage">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g-cloud1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#7B6CF5"/>
+                  <stop offset="100%" stop-color="#4DC8F0"/>
+                </linearGradient>
+              </defs>
+              <path d="M 55,110 Q 30,110 28,88 Q 26,68 46,64 Q 44,42 64,34 Q 86,26 104,44 Q 116,28 138,32 Q 162,36 164,58 Q 180,62 178,82 Q 176,102 156,106 Q 140,118 120,112 Q 100,122 80,114 Q 62,122 55,110 Z" fill="url(#g-cloud1)"/>
+            </svg>
+          </button>
+
+          <button class="badge-shape" onclick="selectBadgeShape(this, 'rounded-rect')" title="Rectangle arrondi">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g-rect" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#BFEF3A"/>
+                  <stop offset="100%" stop-color="#96D900"/>
+                </linearGradient>
+              </defs>
+              <rect x="28" y="34" width="144" height="72" rx="30" ry="30" fill="url(#g-rect)"/>
+            </svg>
+          </button>
+
+          <button class="badge-shape" onclick="selectBadgeShape(this, 'starburst')" title="Soleil dentelé">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g-star" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#CE90E0"/>
+                  <stop offset="100%" stop-color="#B86ED4"/>
+                </linearGradient>
+              </defs>
+              <polygon fill="url(#g-star)" points="100,18 108,36 124,24 126,44 144,38 140,58 160,58 150,76 170,82 154,94 170,106 154,112 164,130 146,130 148,150 130,144 124,164 110,152 100,170 90,152 76,164 70,144 52,150 54,130 36,130 46,112 30,106 46,94 30,82 50,76 40,58 60,58 56,38 74,44 76,24 92,36"/>
+            </svg>
+          </button>
+
+          <button class="badge-shape" onclick="selectBadgeShape(this, 'hexagon')" title="Hexagone">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g-hex" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FF9A3C"/>
+                  <stop offset="100%" stop-color="#E8720A"/>
+                </linearGradient>
+              </defs>
+              <polygon points="50,70 70,30 130,30 150,70 130,110 70,110" fill="url(#g-hex)"/>
+            </svg>
+          </button>
+
+          <button class="badge-shape" onclick="selectBadgeShape(this, 'octagon')" title="Octogone">
+            <svg viewBox="0 0 256 199" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g-oct" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#FF6BAE"/>
+                  <stop offset="100%" stop-color="#FFD166"/>
+                </linearGradient>
+              </defs>
+              <path d="M 126.56,189.24 c-0.38,-0.13 -8.42,-4.13 -17.89,-8.89 -9.47,-4.73 -17.69,-8.82 -18.29,-9.04 -0.58,-0.22 -5.02,-1.22 -9.89,-2.20 -4.84,-0.98 -10.71,-2.16 -13.04,-2.64 -2.31,-0.49 -7.02,-1.44 -10.44,-2.11 -7.56,-1.51 -7.80,-1.58 -8.24,-2.24 -0.36,-0.53 -0.84,-1.89 -4.87,-13.11 -1.31,-3.67 -3.18,-8.84 -4.13,-11.53 l-1.76,-4.87 -4.62,-5.80 c-5.02,-6.31 -8.76,-11.04 -12.64,-16.09 -3.40,-4.36 -3.42,-3.89 0.49,-8.60 2.47,-2.98 13.49,-16.42 15.11,-18.47 2.20,-2.76 1.84,-1.89 6.98,-16.76 5.42,-15.67 5.36,-15.51 5.84,-16.11 0.42,-0.56 1.04,-0.78 3.40,-1.22 0.73,-0.13 2.18,-0.44 3.22,-0.67 1.04,-0.24 3.09,-0.64 4.56,-0.91 1.47,-0.24 3.87,-0.71 5.33,-1 1.47,-0.31 3.27,-0.64 4,-0.78 0.73,-0.13 2.73,-0.51 4.44,-0.87 1.71,-0.36 6.02,-1.20 9.56,-1.89 l6.44,-1.27 10.11,-5.11 c5.56,-2.82 13.82,-7 18.36,-9.31 4.71,-2.40 8.51,-4.20 8.87,-4.20 0.36,0 4.67,2.09 10.31,4.98 16.69,8.56 26.53,13.42 27.91,13.78 0.73,0.18 4.18,0.89 7.67,1.58 3.49,0.69 9.29,1.84 12.89,2.56 3.60,0.73 9.16,1.82 12.31,2.44 3.18,0.62 6.04,1.29 6.38,1.44 0.71,0.38 0.49,-0.18 2.87,6.89 5.73,16.91 8.20,23.84 8.64,24.49 0.20,0.24 2.51,3.16 5.13,6.44 2.64,3.27 5.69,7.11 6.78,8.51 1.11,1.40 3.02,3.84 4.29,5.40 2.47,3.09 2.93,3.84 2.93,4.67 0,0.53 -1.56,2.71 -5.38,7.53 -0.89,1.13 -3.24,4.18 -5.22,6.73 -1.98,2.58 -4.78,6.22 -6.27,8.11 -2.67,3.42 -2.67,3.47 -3.78,6.56 -0.60,1.71 -1.96,5.51 -3.02,8.44 -1.04,2.93 -2.87,8.09 -4.02,11.44 -1.40,4.02 -2.29,6.29 -2.64,6.64 -0.42,0.44 -1.40,0.71 -6.36,1.71 -3.22,0.67 -6.04,1.29 -6.24,1.42 -0.22,0.11 -0.76,0.22 -1.22,0.22 -0.44,0 -1.42,0.13 -2.16,0.31 -0.76,0.18 -2.16,0.49 -3.13,0.67 -0.98,0.20 -6.18,1.24 -11.56,2.33 l-9.78,2 -18.27,9.11 c-10.04,5.02 -18.51,9.22 -18.78,9.33 -0.31,0.11 -0.76,0.09 -1.18,-0.07 Z" fill="url(#g-oct)"/>
+            </svg>
+          </button>
+
+          <button class="badge-shape" onclick="selectBadgeShape(this, 'almond')" title="Amande">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g-almond" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#C06EE8"/>
+                  <stop offset="100%" stop-color="#9040C8"/>
+                </linearGradient>
+              </defs>
+              <path d="M 20,70 Q 60,10 100,10 Q 140,10 180,70 Q 140,130 100,130 Q 60,130 20,70 Z" fill="url(#g-almond)"/>
+            </svg>
+          </button>
+
+          <button class="badge-shape" onclick="selectBadgeShape(this, 'cloud2')" title="Demi-Nuage">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g-cloud2" x1="0%" y1="30%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#38C8F0"/>
+                  <stop offset="100%" stop-color="#1060C8"/>
+                </linearGradient>
+              </defs>
+              <path d="M 40,106 Q 18,106 18,86 Q 18,66 38,64 Q 36,38 58,30 Q 86,20 104,42 Q 118,26 142,30 Q 172,36 172,66 Q 188,70 188,88 Q 188,106 166,106 Z" fill="url(#g-cloud2)"/>
+            </svg>
+          </button>
+
+          <button class="badge-shape" onclick="selectBadgeShape(this, 'blob')" title="Coussin">
+            <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="g-blob" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FF7070"/>
+                  <stop offset="100%" stop-color="#FF4040"/>
+                </linearGradient>
+              </defs>
+              <path d="M 100,16 Q 140,16 158,30 Q 184,48 184,70 Q 184,92 158,110 Q 140,124 100,124 Q 60,124 42,110 Q 16,92 16,70 Q 16,48 42,30 Q 60,16 100,16 Z" fill="url(#g-blob)"/>
+            </svg>
+          </button>
+
+        </div>
+      </div>
+
+      <div class="form-group" id="name-section">
+        <label class="form-label">2. Votre prénom <span id="name-optional" style="display:none;color:var(--text-light);font-size:0.7rem;text-transform:none;letter-spacing:0;font-weight:400;">(optionnel)</span></label>
+        <input type="text" class="text-input" placeholder="Ex : Sophie, Laëtitia, Marie…"
+               id="name-input" oninput="updatePreview()" value="Sophie">
+      </div>
+
+      <div class="form-group" id="job-section">
+        <label class="form-label">3. Votre profession <span style="color:var(--text-light);font-size:0.7rem;text-transform:none;letter-spacing:0">(optionnel)</span></label>
+        <input type="text" class="text-input" placeholder="Ex : Infirmière, Auxiliaire de puériculture, Sage-femme…"
+               id="job-input" oninput="updatePreview()" value="Infirmière">
+      </div>
+
+      <div class="form-group" id="color-section">
+        <label class="form-label" id="color-label">4. Couleur du badge</label>
+        <div class="color-picker" id="color-picker">
+          <div class="color-swatch selected" style="background:#1B3060" onclick="selectColor(this,'#1B3060')" title="Bleu nuit"></div>
+          <div class="color-swatch" style="background:#E85C6B" onclick="selectColor(this,'#E85C6B')" title="Rouge rose"></div>
+          <div class="color-swatch" style="background:#6AC47A" onclick="selectColor(this,'#6AC47A')" title="Vert menthe"></div>
+          <div class="color-swatch" style="background:#F5A54B" onclick="selectColor(this,'#F5A54B')" title="Orange doux"></div>
+          <div class="color-swatch" style="background:#A87DC4" onclick="selectColor(this,'#A87DC4')" title="Violet lilas"></div>
+          <div class="color-swatch" style="background:#D4A853" onclick="selectColor(this,'#D4A853')" title="Doré"></div>
+          <div class="color-swatch" style="background:#E8748C" onclick="selectColor(this,'#E8748C')" title="Rose bonbon"></div>
+          <div class="color-swatch" style="background:#5BA8C4" onclick="selectColor(this,'#5BA8C4')" title="Bleu ciel"></div>
+          <div class="color-swatch" style="background:#C47A48" onclick="selectColor(this,'#C47A48')" title="Terracotta"></div>
+        </div>
+      </div>
+
+      <div class="form-group" id="decos-section">
+        <label class="form-label">5. Décorations</label>
+        
+        <!-- Tabs de sélection -->
+        <div class="deco-tabs">
+          <button class="deco-tab" onclick="setDecoMode('none', this)" data-mode="none">Aucune</button>
+          <button class="deco-tab selected" onclick="setDecoMode('suggested', this)" data-mode="suggested">Suggérées</button>
+          <button class="deco-tab" onclick="setDecoMode('custom', this)" data-mode="custom">Personnalisée</button>
+        </div>
+
+        <!-- Mode : Aucune décoration -->
+        <div id="deco-none" class="deco-section">
+          <div class="deco-none-message">
+            <p>Un design épuré et minimaliste, sans éléments visuels supplémentaires.</p>
+          </div>
+        </div>
+
+        <!-- Mode : Décorations suggérées -->
+        <div id="deco-suggested" class="deco-section active">
+          <p class="deco-section-hint">Choisissez parmi nos propositions (multi-sélection possible)</p>
+          <div class="deco-picker">
+            <button class="deco-btn selected" onclick="toggleDeco(this,'🌈')">🌈 Arc-en-ciel</button>
+            <button class="deco-btn selected" onclick="toggleDeco(this,'⭐')">⭐ Étoile</button>
+            <button class="deco-btn" onclick="toggleDeco(this,'🦄')">🦄 Licorne</button>
+            <button class="deco-btn" onclick="toggleDeco(this,'🐻')">🐻 Ours</button>
+            <button class="deco-btn" onclick="toggleDeco(this,'🌸')">🌸 Fleur</button>
+            <button class="deco-btn" onclick="toggleDeco(this,'💎')">💎 Diamant</button>
+            <button class="deco-btn" onclick="toggleDeco(this,'🎀')">🎀 Nœud</button>
+            <button class="deco-btn" onclick="toggleDeco(this,'🍭')">🍭 Bonbon</button>
+            <button class="deco-btn" onclick="toggleDeco(this,'🌺')">🌺 Hibiscus</button>
+          </div>
+        </div>
+
+        <!-- Mode : Demande personnalisée -->
+        <div id="deco-custom" class="deco-section">
+          <p class="deco-section-hint">Décrivez votre création idéale</p>
+          <div class="custom-deco-form">
+            <div class="form-group" style="margin-bottom: 1.2rem;">
+              <label class="form-label" style="margin-bottom: 0.5rem;">Décoration souhaitée *</label>
+              <input type="text" class="text-input" placeholder="Ex. papillon, stéthoscope, panda, thème marin, lune, soleil…" 
+                     id="custom-deco-input">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" style="margin-bottom: 0.5rem;">Précisions</label>
+              <textarea class="text-input" placeholder="Couleurs souhaitées, ambiance (doux, enfant, élégant…), nombre d'éléments, emplacement…" 
+                        id="custom-deco-notes" style="min-height: 80px; resize: vertical; font-family: 'Jost', sans-serif;"></textarea>
+            </div>
+            <div class="custom-deco-info">
+              <p>✦ Nous faisons au mieux pour respecter votre demande selon le format du produit et la faisabilité artisanale. Nous vous contacterons si nécessaire.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Option collier (badge uniquement) -->
+      <div class="form-group" id="lanyard-option-section">
+        <label class="form-label">6. Collier associé</label>
+        <label class="toggle-option" id="lanyard-toggle" onclick="toggleLanyard()">
+          <div class="toggle-track" id="lanyard-track">
+            <div class="toggle-thumb"></div>
+          </div>
+          <div class="toggle-content">
+            <span class="toggle-label" id="lanyard-label">Non — badge seul</span>
+            <span class="toggle-desc">Ajouter un collier/tour de cou assorti au badge</span>
+          </div>
+        </label>
+      </div>
+
+      <!-- Options spécifiques au mug -->
+      <div id="mug-options-section" style="display:none;">
+        <div class="form-group">
+          <label class="form-label" id="mug-style-label">4. Style du design</label>
+          <div class="mug-style-grid">
+            <button class="mug-style-btn" onclick="selectMugStyle(this, 'minimal')">
+              <span class="mug-style-preview mug-style-preview-minimal">Aa</span>
+              <span class="mug-style-name">Minimaliste</span>
+            </button>
+            <button class="mug-style-btn selected" onclick="selectMugStyle(this, 'elegant')">
+              <span class="mug-style-preview mug-style-preview-elegant">Aa</span>
+              <span class="mug-style-name">Élégant</span>
+            </button>
+            <button class="mug-style-btn" onclick="selectMugStyle(this, 'modern')">
+              <span class="mug-style-preview mug-style-preview-modern">Aa</span>
+              <span class="mug-style-name">Moderne</span>
+            </button>
+            <button class="mug-style-btn" onclick="selectMugStyle(this, 'fun')">
+              <span class="mug-style-preview mug-style-preview-fun">Aa</span>
+              <span class="mug-style-name">Fun</span>
+            </button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" id="mug-perso-label">5. Personnalisation <span style="color:var(--text-light);font-size:0.7rem;text-transform:none;letter-spacing:0;font-weight:400;">(optionnel)</span></label>
+          <div class="custom-deco-form">
+            <div class="form-group" style="margin-bottom: 1.2rem;">
+              <label class="form-label" style="margin-bottom: 0.5rem;">Décoration souhaitée</label>
+              <input type="text" class="text-input" placeholder="Ex. prénom en arc-en-ciel, thème café, fleur, lune…" id="mug-custom-deco-input">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" style="margin-bottom: 0.5rem;">Précisions</label>
+              <textarea class="text-input" placeholder="Couleurs souhaitées, ambiance, éléments particuliers…" id="mug-custom-deco-notes" style="min-height: 80px; resize: vertical; font-family: 'Jost', sans-serif;"></textarea>
+            </div>
+            <div class="custom-deco-info">
+              <p>✦ Nous faisons au mieux pour respecter votre demande selon la faisabilité artisanale. Nous vous contacterons si nécessaire.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Options spécifiques au tote bag -->
+      <div id="tote-options-section" style="display:none;">
+        <div class="form-group">
+          <label class="form-label">2. Personnalisation <span style="color:var(--text-light);font-size:0.7rem;text-transform:none;letter-spacing:0;font-weight:400;">(optionnel)</span></label>
+          <div class="custom-deco-form">
+            <div class="form-group" style="margin-bottom: 1.2rem;">
+              <label class="form-label" style="margin-bottom: 0.5rem;">Personnalisation souhaitée</label>
+              <input type="text" class="text-input" placeholder="Ex. initiale, prénom, motif, couleur du tissu…" id="tote-custom-input">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" style="margin-bottom: 0.5rem;">Précisions</label>
+              <textarea class="text-input" placeholder="Couleurs souhaitées, emplacement du motif, taille, message…" id="tote-custom-notes" style="min-height: 80px; resize: vertical; font-family: 'Jost', sans-serif;"></textarea>
+            </div>
+            <div class="custom-deco-info">
+              <p>✦ Nous faisons au mieux pour respecter votre demande selon la faisabilité artisanale. Nous vous contacterons si nécessaire.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Options spécifiques à la décoration -->
+      <div id="deco-options-section" style="display:none;">
+        <div class="form-group">
+          <label class="form-label">2. Personnalisation <span style="color:var(--text-light);font-size:0.7rem;text-transform:none;letter-spacing:0;font-weight:400;">(optionnel)</span></label>
+          <div class="custom-deco-form">
+            <div class="form-group" style="margin-bottom: 1.2rem;">
+              <label class="form-label" style="margin-bottom: 0.5rem;">Décoration souhaitée</label>
+              <input type="text" class="text-input" placeholder="Ex. bougie parfumée, marque-page, thème floral…" id="deco-custom-input">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label" style="margin-bottom: 0.5rem;">Précisions</label>
+              <textarea class="text-input" placeholder="Couleurs, ambiance, dimensions, message à intégrer…" id="deco-custom-notes" style="min-height: 80px; resize: vertical; font-family: 'Jost', sans-serif;"></textarea>
+            </div>
+            <div class="custom-deco-info">
+              <p>✦ Nous faisons au mieux pour respecter votre demande selon la faisabilité artisanale. Nous vous contacterons si nécessaire.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="config-add-btn" onclick="addToCart()">
+        🛍️ Ajouter au panier — <span id="btn-price">14,90 €</span>
+      </button>
+      <div style="text-align:center;font-size:0.75rem;color:var(--text-light);margin-top:0.75rem;">
+        ✓ Paiement sécurisé &nbsp;·&nbsp; ✓ Satisfait ou échangé &nbsp;·&nbsp; ✓ Fait main avec amour
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-section">
+  <div style="text-align:center;margin-bottom:1rem">
+    <div class="section-label">Pourquoi nous choisir</div>
+    <h2 class="section-title">L'artisanat avec le <em>cœur</em></h2>
+  </div>
+  <div class="trust-grid">
+    <div class="trust-card">
+      <div class="trust-icon">🤲</div>
+      <h3>Fait main avec soin</h3>
+      <p>Chaque création est réalisée à la main, avec une attention particulière aux détails et aux finitions.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">✨</div>
+      <h3>Sur mesure</h3>
+      <p>Prénom, couleurs, décorations… tout est personnalisable pour créer quelque chose d'unique.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">💌</div>
+      <h3>Idéal pour offrir</h3>
+      <p>Message personnalisé inclus gratuitement. L'émotion d'un cadeau qui vient vraiment du cœur.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="reviews-header">
+    <div class="section-label">Témoignages</div>
+    <h2 class="section-title" style="margin-bottom:1rem">Ils nous font <em>confiance</em></h2>
+    <div class="reviews-stars">⭐⭐⭐⭐⭐</div>
+    <div class="reviews-count">4,9/5 · Plus de 120 avis vérifiés</div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">"J'ai offert ce badge à ma collègue infirmière pour son anniversaire. Elle a adoré, le travail est vraiment soigné et la personnalisation parfaite. Je recommande vivement !"</div>
+      <div class="review-author">
+        <div class="reviewer-avatar" style="background:var(--terracotta)">ML</div>
+        <div>
+          <div class="reviewer-name">Marie-Laure</div>
+          <div class="reviewer-role">Infirmière · Paris</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">"Les mugs de Noël sont absolument magnifiques ! La qualité d'impression est impeccable et l'emballage était tellement soigné. Merci pour cette belle expérience."</div>
+      <div class="review-author">
+        <div class="reviewer-avatar" style="background:var(--gold)">SR</div>
+        <div>
+          <div class="reviewer-name">Sophie R.</div>
+          <div class="reviewer-role">Professeure · Lyon</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">"Commande rapide, livraison soignée et un résultat qui dépasse mes attentes. Mon lanyard personnalisé est adorable, exactement ce que j'avais demandé. Bravo !"</div>
+      <div class="review-author">
+        <div class="reviewer-avatar" style="background:#6AC47A">CE</div>
+        <div>
+          <div class="reviewer-name">Camille E.</div>
+          <div class="reviewer-role">Auxiliaire de puériculture</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="logo">Cathy <span>Fantaisies</span></div>
+      <p>Créations artisanales personnalisées, faites avec amour et livrées avec soin. Chaque pièce est unique, comme vous.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Collections</h4>
+      <ul>
+        <li><a href="#">Badges & Porte-noms</a></li>
+        <li><a href="#">Mugs personnalisés</a></li>
+        <li><a href="#">Tote bags</a></li>
+        <li><a href="#">Décoration</a></li>
+        <li><a href="#">Accessoires</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Aide</h4>
+      <ul>
+        <li><a href="#">Comment commander ?</a></li>
+        <li><a href="#">Délais de livraison</a></li>
+        <li><a href="#">Retours & échanges</a></li>
+        <li><a href="#">Nous contacter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>À propos</h4>
+      <ul>
+        <li><a href="#">Notre histoire</a></li>
+        <li><a href="#">Nos engagements</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Mentions légales</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 Cathy Fantaisies · Tous droits réservés · Fait avec ♥ en France</div>
+    <div class="social-links">
+      <a href="#" class="social-btn">📸</a>
+      <a href="#" class="social-btn">📘</a>
+      <a href="#" class="social-btn">✉️</a>
+    </div>
+  </div>
+</footer>
+
+<!-- CART NOTIFICATION -->
+<div class="cart-notif" id="cart-notif">
+  <span>✓</span> Article ajouté au panier !
+</div>
+
+<!-- CART PANEL -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-panel" id="cart-panel">
+  <div class="cart-panel-header">
+    <h3>Mon panier</h3>
+    <button class="cart-panel-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty">Votre panier est vide</div>
+  </div>
+  <div class="cart-panel-footer" id="cart-footer" style="display:none;">
+    <div class="cart-total-line">
+      <span>Total</span>
+      <strong id="cart-total">0,00 €</strong>
+    </div>
+    <button class="cart-checkout-btn">Commander →</button>
+    <p class="cart-footer-note">✓ Paiement sécurisé &nbsp;·&nbsp; ✓ Fait main avec amour</p>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="" onclick="event.stopPropagation()">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
